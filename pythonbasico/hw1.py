@@ -9,4 +9,4 @@ w=(1,"A","Andre",1.23,1.23)
 print("u é uma tuplo", u,u[0])
 print("u é uma lista", v,v[0])
 print("u é um conjunto",w)
-# w[0] operacao 
+# w[0] operacão 
