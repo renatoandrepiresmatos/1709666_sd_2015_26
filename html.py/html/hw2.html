@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Ler um ficheiro JSON local e mostrar o conteúdo</h2>
+
+<input type="file" id="fileInput" accept=".json"><br><br>
+<pre id="output"></pre>
+
+<script>
+document.getElementById('fileInput').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const obj = JSON.parse(e.target.result);
+      document.getElementById('output').textContent = JSON.stringify(obj, null, 2);
+    } catch (err) {
+      document.getElementById('output').textContent = "Erro ao ler JSON: " + err;
+    }
+  };
+  reader.readAsText(file);
+});
+</script>
+
+</body>
+</html>

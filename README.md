@@ -1,18 +1,17 @@
 # 1709666_sd_2015_26
 
-Renato Matos 
+1. Python básico
 
+2. microserviços
 
-1709666 
+3. threads
 
+4. Processos 
 
-cibersegurança
+5. (D)Serializacao
 
+6. Sockets
 
-Instituto Politécnico de Guarda
+7. RPC
 
-Escola  Superior de Tecnologia e Gestão
-
-
-
-FCPORTO
+0

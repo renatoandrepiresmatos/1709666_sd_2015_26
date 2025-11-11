@@ -1,0 +1,32 @@
+ex3.py
+exercício: 
+
+- crie um programa em python com uma única função, mult(nome,x). 
+
+- A função mult(nome,x) é usadapro duas threads, th1, th2.
+
+- Ath1 usa mult(nome, x) para imprimir os primeiros 100 múltiplos de 2,
+
+- Ath2 usa mult(nome, x) para imprimir os primeiros 100 múltiplos de 3,
+
+- o programa a principal no fim tem uma linha com print("FINAL")
+
+- as th1, th2 são submetidas para execução à class ThreadPoolExecutor
+"""
+
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+
+def mult(nome, x):
+    for i in range(1, 101):
+        print(f"{nome}: {i} x {x} = {i * x}")
+
+if __name__ == "__main__":
+
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        # Submete as duas funções mult() para execução em paralelo
+        executor.submit(mult, "Thread 1", 2)
+        executor.submit(mult, "Thread 2", 3)
+
+    print("FINAL")
